@@ -143,7 +143,6 @@ async function run() {
       }
     });
 
-    // 10: Add a booking
     app.post("/addbookings", async (req, res) => {
       try {
         const newBooking = req.body;
@@ -154,7 +153,6 @@ async function run() {
       }
     });
 
-    // 11: Update booking status
     app.put("/pendingBooking/:id", async (req, res) => {
       try {
         const id = req.params.id;
@@ -169,7 +167,6 @@ async function run() {
       }
     });
 
-    // Test DB connection
     await client.db("admin").command({ ping: 1 });
     console.log("Pinged your deployment. Connection successful.");
   } catch (error) {
