@@ -179,12 +179,10 @@ async function run() {
 
 run().catch(console.dir);
 
-// Default route
 app.get("/", (req, res) => {
   res.send("This is the server of One Service");
 });
 
-// Start server
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
