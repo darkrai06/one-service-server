@@ -75,7 +75,6 @@ async function run() {
       }
     });
 
-    // 05: Delete a service
     app.delete("/showAddService/:id", async (req, res) => {
       try {
         const id = req.params.id;
@@ -86,7 +85,6 @@ async function run() {
       }
     });
 
-    // 06: Get a single added service by ID
     app.get("/showAddService/:id", async (req, res) => {
       try {
         const id = req.params.id;
