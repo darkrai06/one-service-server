@@ -181,7 +181,7 @@ run().catch(console.dir);
 
 // Default route
 app.get("/", (req, res) => {
-  res.send("This is the service sharing server");
+  res.send("This is the server of One Service");
 });
 
 // Start server
