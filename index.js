@@ -23,14 +23,12 @@ const client = new MongoClient(uri, {
 
 async function run() {
   try {
-    // Connect to MongoDB
     await client.connect();
     console.log("Connected to MongoDB");
 
     const serviceCollection = client.db("serviceMasterDB").collection("services");
     const bookingCollection = client.db("serviceMasterDB").collection("bookings");
 
-    // 01: Get all services
     app.get("/services", async (req, res) => {
       try {
         const result = await serviceCollection.find().toArray();
@@ -41,7 +39,6 @@ async function run() {
       }
     });
 
-    // 02: Get a service by ID
     app.get("/services/:id", async (req, res) => {
       try {
         const id = req.params.id;
@@ -52,7 +49,6 @@ async function run() {
       }
     });
 
-    // 03: Add a new service
     app.post("/addservices", async (req, res) => {
       try {
         const newService = req.body;
@@ -117,7 +113,6 @@ async function run() {
       }
     });
 
-    // 08: Get bookings by email (query)
     app.get("/bookings", async (req, res) => {
       try {
         const query = req.query.email ? { email: req.query.email } : {};
@@ -128,7 +123,6 @@ async function run() {
       }
     });
 
-    // 09: Get pending bookings by service provider email
     app.get("/pendingBooking", async (req, res) => {
       try {
         const query = req.query.serviceProviderEmail
