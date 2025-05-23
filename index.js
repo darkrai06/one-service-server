@@ -64,7 +64,6 @@ async function run() {
       }
     });
 
-    // 04: Get services by user email (query)
     app.get("/showServices", async (req, res) => {
       try {
         const query = req.query.userEmail ? { userEmail: req.query.userEmail } : {};
@@ -95,7 +94,6 @@ async function run() {
       }
     });
 
-    // 07: Update a service
     app.put("/showAddService/:id", async (req, res) => {
       try {
         const id = req.params.id;
